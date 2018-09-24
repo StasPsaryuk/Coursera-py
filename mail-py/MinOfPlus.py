@@ -1,21 +1,19 @@
 def MinOfPlus():
     m, n = map(int, input("Введите размерность MxN через пробел: ").split())
-    array = []
+    array = list()
 
-    print("Вводите елементы через Enter: ")
-    for i in range(m):
-        array.append([])
-        for j in range(n):
-            array[i].append(input())
+    print("Введите строки матрицы через пробел: ")
+    for _ in range(int(n)):
+        array.append(list(map(int, input().split())))
 
     print("Матрица: ")
     for u in range(m):
         print(array[u])
 
     print("Результат: ")
-    for i in range(m):
-        for j in range(n):
-            print(min(array[i]))
+    for i, m in enumerate(array):
+        for j, n in enumerate(array):
+            print(min(filter(lambda x: x > 0, array[i])))
             break
 
 
